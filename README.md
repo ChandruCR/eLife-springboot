@@ -11,7 +11,7 @@ Microservice implementation as of 26th October 2017 contains 4 projects
 
 ### Setup 
 
-* Change url to eLife-eureka server[elife-eureka](https://github.com/ChandruCR/eLife-eureka)
+* Change url in application.yml file
 * Update project using maven
 * Run project as SpringbootApp or just run ELifeApplication.java
 * Project will run on port 7001
