@@ -30,6 +30,7 @@ public class ERecipeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ERecipeController.class);
 	
+	// Service which gets all Recipes from repository
 	@GetMapping
 	public List<ERecipe> getAllERecipes() {
 
@@ -38,6 +39,7 @@ public class ERecipeController {
 
 	}
 
+	// Service which gets complete details of a recipe from repository
 	@GetMapping(value = "/{username}/{recipeName}")
 	public ERecipe getERecipe(@PathVariable("username") String username,
 			@PathVariable("recipeName") String recipeName) {
@@ -47,6 +49,7 @@ public class ERecipeController {
 
 	}
 
+	// Service which posts a recipe and saves it into repository
 	@PostMapping(consumes = "application/json")
 	public void createERecipe(@RequestBody ERecipe eRecipe) {
 
@@ -55,6 +58,7 @@ public class ERecipeController {
 
 	}
 
+	// Service which gets all recipes from repository matching username and recipeName passed to it
 	@GetMapping(value = "/searchbyname/{username}/{recipeName}")
 	public List<ERecipe> searchERecipesByRecipeName(@PathVariable("username") String username,
 			@PathVariable("recipeName") String recipeName) {
@@ -64,6 +68,7 @@ public class ERecipeController {
 
 	}
 
+	// Service which gets all recipes from repository matching username and recipeType passed to it
 	@GetMapping(value = "/searchbytype/{username}/{recipeType}")
 	public List<ERecipe> searchERecipesByRecipeType(@PathVariable("username") String username,
 			@PathVariable("recipeType") String recipeType) {
@@ -73,6 +78,7 @@ public class ERecipeController {
 
 	}
 
+	// Service which updates a specific recipe in repository
 	@PutMapping(consumes = "application/json")
 	public void updateERecipe(@RequestBody ERecipe eRecipe) {
 
@@ -81,6 +87,7 @@ public class ERecipeController {
 
 	}
 
+	// Service which deletes a matching recipe with username and recipeName passed to it
 	@DeleteMapping(value= "/{username}/{recipeName}")
 	public void deleteERecipe(@PathVariable("username") String username, @PathVariable("recipeName")String recipeName) {
 

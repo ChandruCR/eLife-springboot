@@ -1,5 +1,7 @@
 package com.goldenducks.elife;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
@@ -12,12 +14,14 @@ import com.goldenducks.elife.microservices.RemoteERecipeService;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class ApplicationStarter {
+public class ELifeApplication {
 
+	private static final Logger logger = LoggerFactory.getLogger(ELifeApplication.class);
 	public static final String ERECIPE_SERVICE = "http://ERECIPE";
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApplicationStarter.class, args);
+		logger.debug("Starting eLife Applcation");
+		SpringApplication.run(ELifeApplication.class, args);
 	}
 
 	@Bean
